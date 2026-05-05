@@ -5,10 +5,10 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import User
 
-# আপনার কাস্টম ইউজার মডেলটি অ্যাডমিন প্যানেলে রেজিস্টার করুন
+## admin register## 
 class MyUserAdmin(UserAdmin):
     model = User
-    # অ্যাডমিন প্যানেলে কোন কোন কলাম দেখাবে তা সেট করতে পারেন
+    # #list display
     list_display = ['username', 'phone_number', 'email', 'is_staff', 'is_admin']
     fieldsets = UserAdmin.fieldsets + (
         (None, {'fields': ('phone_number', 'is_admin')}),
